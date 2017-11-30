@@ -5,7 +5,7 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import org.drools.workshop.model.*;
-
+import org.kie.api.runtime.rule.FactHandle;
 import org.drools.workshop.endpoint.api.HomeCategorizationService;
 import org.kie.api.cdi.KReleaseId;
 import org.kie.api.cdi.KSession;
@@ -39,15 +39,18 @@ public class HomeCategorizationServiceImpl implements HomeCategorizationService 
     }
 
     @Override
-    public Place deleteplace(Place place) {
-        System.out.println(">> kSession: " + kSession);
-        printKieSessionAllFacts(kSession);
-        System.out.println(">> Place: " + place);
-        kSession.insert(place);
-        int fired = kSession.fireAllRules();
-        System.out.println(">> Fired: " + fired);
-        return place;
-
+    public Place deleteplace(Integer id) {
+        for (Object o : kSession.getObjects()) {
+            if ( o instanceof Place) {
+                Place other_place = (Place) o;
+                if(other_place.getId() == id) {
+                    FactHandle handle = kSession.insert(other_place);
+                    kSession.delete(handle);
+                    kSession.fireAllRules();
+                    return null;
+                }
+            }
+        }   return null;
     }
 
     @Override
@@ -71,6 +74,21 @@ public class HomeCategorizationServiceImpl implements HomeCategorizationService 
         System.out.println(">> Fired: " + fired);
         return object;
 
+    }
+
+    @Override
+    public Home_object deleteobject(Integer id) {
+        for (Object o : kSession.getObjects()) {
+            if ( o instanceof Home_object) {
+                Home_object other_object = (Home_object) o;
+                if(other_object.getId() == id) {
+                    FactHandle handle = kSession.insert(other_object);
+                    kSession.delete(handle);
+                    kSession.fireAllRules();
+                    return null;
+                }
+            }
+        }   return null;
     }
 
     @Override

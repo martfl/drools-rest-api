@@ -30,7 +30,7 @@ public interface HomeCategorizationService {
     @Consumes("application/json")
     @Produces("application/json")
     @Path("/deleteplace")
-    public Place deleteplace(@NotNull Place place);
+    public Place deleteplace(@NotNull Integer id);
         
     @GET
     @Produces("application/json")
@@ -42,6 +42,12 @@ public interface HomeCategorizationService {
     @Produces("application/json")
     @Path("/setobject")
     public Home_object setobject(@NotNull Home_object object);
+
+    @POST
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path("/deleteobject")
+    public Home_object deleteobject(@NotNull Integer id);
 
     @GET
     @Produces("application/json")
