@@ -7,10 +7,6 @@ package org.drools.workshop.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author salaboy
- */
 @XmlRootElement
 public class Place {
     
