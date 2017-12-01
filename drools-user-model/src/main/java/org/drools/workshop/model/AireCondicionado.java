@@ -9,7 +9,7 @@ public class AireCondicionado {
     public Integer instensity;
     public String place;
     public float energyThreshold;
-    public Integer temperature;
+    public float temperature;
     
     public AireCondicionado() {
     }
@@ -50,7 +50,7 @@ public class AireCondicionado {
       this.temperature = temperature;
    }
 
-   public Integer getTemperature() {
+   public float getTemperature() {
       return temperature;
    }
     
@@ -59,7 +59,7 @@ public class AireCondicionado {
         return "AireCondicionado{" + "Nombre=" + name + '}';
     }
     
-    public AireCondicionado(String name, Integer instensity, String place, float energyThreshold, Integer temperature){
+    public AireCondicionado(String name, Integer instensity, String place, float energyThreshold, float temperature){
         this.name = name;
         this.instensity = instensity;
         this.place = place;

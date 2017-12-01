@@ -9,7 +9,7 @@ public class SensorTemperatura {
 	public String place;
     public boolean state;
     public boolean connected;
-    public Integer temperature;
+    public float temperature;
     public String name;
     public String person;
 
@@ -47,7 +47,7 @@ public class SensorTemperatura {
         this.connected= connected;
     }
 
-    public Integer getTemperature() {
+    public float getTemperature() {
         return temperature;
     }
 
@@ -68,7 +68,7 @@ public class SensorTemperatura {
         return "Sensor{" + "Persona =" + person + "se encuentra en =" + place + '}';
     }
     
-    public SensorTemperatura(String place, boolean state, boolean connected, Integer temperature, String name, String person){
+    public SensorTemperatura(String place, boolean state, boolean connected, float temperature, String name, String person){
         this.place = place;
         this.state = state;
     	this.temperature = temperature;

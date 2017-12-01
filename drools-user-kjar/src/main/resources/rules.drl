@@ -53,16 +53,16 @@ rule "Prender Aire"
         $t: SensorTemperatura($t.temperature == $p.max_temp && $t.place == place)
         $a: AireCondicionado($a.place == $t.place)
     then
-        $a.setIntensity("max");
+        $a.setIntensity(30);
  end  
 
  rule "Prender Calefaccion"
     when
         $p: Place()
         $t: SensorTemperatura($t.temperature == $p.max_temp && $t.place == place)
-        $c: Calefaccion($a.place == $t.place)
+        $c: Calefaccion($c.place == $t.place)
     then
-        $c.setIntensity("max");
+        $c.setIntensity(30);
  end  
 
 
