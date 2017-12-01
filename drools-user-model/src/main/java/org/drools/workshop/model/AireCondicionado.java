@@ -56,7 +56,7 @@ public class AireCondicionado {
     
     @Override
     public String toString() {
-        return "AireCondicionado{" + "Nombre=" + name'}';
+        return "AireCondicionado{" + "Nombre=" + name + '}';
     }
     
     public AireCondicionado(String name, Integer instensity, String place, float energyThreshold, Integer temperature){

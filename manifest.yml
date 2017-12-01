@@ -1,0 +1,6 @@
+  applications:
+   - name: drools-api
+     random-route: true
+     path: drools-jax-rs/target/drools-jax-rs-1.0-SNAPSHOT-swarm.jar
+     memory: 128M
+     instances: 1

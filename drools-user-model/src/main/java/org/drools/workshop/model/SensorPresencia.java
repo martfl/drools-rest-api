@@ -13,7 +13,7 @@ public class SensorPresencia {
     public String name;
     public String person;
     
-    public SensorM() {
+    public SensorPresencia() {
     }
 
     public String getName() {
@@ -68,7 +68,7 @@ public class SensorPresencia {
         return "Sensor{" + "Persona =" + person + "se encuentra en =" + place + '}';
     }
     
-    public SensorM(String place, boolean state, boolean connected, boolean presence, String name, String person){
+    public SensorPresencia(String place, boolean state, boolean connected, boolean presence, String name, String person){
         this.place = place;
         this.state = state;
     	this.connected = connected;

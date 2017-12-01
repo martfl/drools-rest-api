@@ -12,7 +12,7 @@ public class Foco {
     public boolean state;
     public float energyThreshold;
     
-    public AireCondicionado() {
+    public Foco() {
     }
 
    public void setName(String name) {
@@ -60,7 +60,7 @@ public class Foco {
         return "Foco{" + "Nombre=" + name + ", estado=" + state +'}';
     }
     
-    public AireCondicionado(String name, Integer instensity, String place, boolean state, float energyThreshold){
+    public Foco(String name, Integer instensity, String place, boolean state, float energyThreshold){
         this.name = name;
         this.instensity = instensity;
         this.place = place;

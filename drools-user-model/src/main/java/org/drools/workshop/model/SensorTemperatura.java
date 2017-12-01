@@ -12,8 +12,8 @@ public class SensorTemperatura {
     public Integer temperature;
     public String name;
     public String person;
-    
-    public SensorM() {
+
+    public SensorTemperatura() {
     }
 
     public String getName() {
@@ -68,11 +68,10 @@ public class SensorTemperatura {
         return "Sensor{" + "Persona =" + person + "se encuentra en =" + place + '}';
     }
     
-    public SensorM(String place, boolean state, boolean connected, Integer temperature, String name, String person){
+    public SensorTemperatura(String place, boolean state, boolean connected, Integer temperature, String name, String person){
         this.place = place;
         this.state = state;
     	this.temperature = temperature;
-    	this.presence = presence;
     	this.name = name;
     	this.person = person;
     }
