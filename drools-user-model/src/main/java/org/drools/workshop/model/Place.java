@@ -10,17 +10,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Place {
     
-    private String name;
-    private Integer id;
-    private float temp_threshold;
-    private float actual_temp;
-    private float max_temp;
-    private float min_temp;
-    private float energy_threshold;
-    private float actual_energy;
-    private boolean movement;
-    private float humidity;
-    private float light;
+    public String name;
+    public Integer id;
+    public float temp_threshold;
+    public float actual_temp;
+    public float max_temp;
+    public float min_temp;
+    public float energy_threshold;
+    public float actual_energy;
+    public boolean movement;
+    public float humidity;
+    public float light;
 
     public Place() {
     }
