@@ -10,12 +10,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Home_object {
     
-    private String name;
-    private Integer place;
-    private Integer id;
-    private String category;
-    private float energy;
-    private boolean state;
+    public String name;
+    public Integer place;
+    public Integer id;
+    public String category;
+    public float energy;
+    public boolean state;
+    public float temp;
+    public float illumination;
 
     public Home_object() {
     }
@@ -25,13 +27,17 @@ public class Home_object {
                         Integer id,
                         String category,
                         float energy,
-                        boolean state) {
+                        boolean state,
+                        float temp,
+                        float illumination) {
         this.name = name;
         this.place = place;
         this.id = id;
         this.category = category;
         this.energy = energy;
         this.state = state;
+        this.temp = temp;
+        this.illumination = illumination;
     }
 
     public String getName() {
@@ -80,6 +86,22 @@ public class Home_object {
 
     public void setState(boolean state) {
         this.state = state;
+    }
+
+    public float getIllumination() {
+        return illumination;
+    }
+
+    public void setIllumination(float illumination) {
+        this.illumination = illumination;
+    }
+
+    public float getTemp() {
+        return temp;
+    }
+
+    public void setTemp(float temp) {
+        this.temp = temp;
     }
 
     @Override
