@@ -28,3 +28,47 @@ rule "Category By Age: Not Valid"
     then
         $u.setCategory("Not Valid");
 end
+
+rule "Prender Luz"
+  when
+    $m: SensorPresencia(presence == true && $m.place==place)
+    $r: Home_object($m.place==place)
+    $f: Foco($m.place==place)
+  then
+    $f.setState(true);
+end
+
+rule "Apagar Luz"
+  when
+    $m: SensorPresencia(presence == false && $m.place==place)
+    $r: Home_object($m.place==place)
+    $f: Foco($m.place==place)
+  then
+    $f.setState(true);
+end
+
+rule "Prender Aire"
+    when
+        $p: Place()
+        $t: SensorTemperatura($t.temperature == $p.max_temp && $t.place == place)
+        $a: AireCondicionado($a.place == $t.place)
+    then
+        $a.setIntensity("max");
+ end  
+
+ rule "Prender Calefaccion"
+    when
+        $p: Place()
+        $t: SensorTemperatura($t.temperature == $p.max_temp && $t.place == place)
+        $c: Calefaccion($a.place == $t.place)
+    then
+        $c.setIntensity("max");
+ end  
+
+
+
+
+
+
+
+

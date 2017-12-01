@@ -14,6 +14,8 @@ public class Place {
     private Integer id;
     private float temp_threshold;
     private float actual_temp;
+    private float max_temp;
+    private float min_temp;
     private float energy_threshold;
     private float actual_energy;
     private boolean movement;
@@ -27,6 +29,8 @@ public class Place {
                 Integer id,
                 float temp_threshold,
                 float actual_temp,
+                float max_temp,
+                float min_temp,
                 float energy_threshold,
                 float actual_energy,
                 boolean movement,
@@ -36,6 +40,8 @@ public class Place {
         this.id = id;
         this.temp_threshold = temp_threshold;
         this.actual_temp = actual_temp;
+        this.max_temp = max_temp;
+        this.min_temp = min_temp;
         this.energy_threshold = energy_threshold;
         this.actual_energy = actual_energy;
         this.movement = movement;
@@ -113,6 +119,22 @@ public class Place {
 
     public void setLight(float lighght) {
         this.light = lighght;
+    }
+
+    public float getMinTemp() {
+        return min_temp;
+    }
+
+    public void setMinTemp(float min_temp) {
+        this.min_temp = min_temp;
+    }
+
+    public float getMaxTemp() {
+        return max_temp;
+    }
+
+    public void setMaxTemp(float max_temp) {
+        this.max_temp = max_temp;
     }
 
     @Override
